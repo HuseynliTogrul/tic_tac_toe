@@ -34,6 +34,7 @@ const TicTacToe = () => {
 
 
     const handleClick = (getCurrentSquare) => {
+        if (getWinner(squares) || squares[getCurrentSquare]) return;
         let cpySquares = [...squares]
         if (cpySquares[getCurrentSquare]) return
         cpySquares[getCurrentSquare] = isXTurn ? 'X' : 'O';
